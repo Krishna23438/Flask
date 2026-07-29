@@ -7,9 +7,9 @@ app = Flask(__name__)
 def hello_world():
   return render_template("index.html")
 
-@app.route("/prime")
+@app.route("/login")
 def prime():
-  return "<p>Hello, Prime World!</p>"
+  return render_template("login.html")
 
 
 if __name__ == "__main__":
