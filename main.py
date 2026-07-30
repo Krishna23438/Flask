@@ -13,6 +13,10 @@ def hello_world():
 def prime():
   return render_template("login.html")
 
+@app.route("/handle-login",methods = ["GET","POST"])
+def handle_login():
+  return "<p> this route is to handle login</p>"
+
 
 if __name__ == "__main__":
   app.run(debug=True)
