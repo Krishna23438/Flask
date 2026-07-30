@@ -5,9 +5,11 @@ app = Flask(__name__)
 # URL => endpoint /
 @app.route("/")
 def hello_world():
+  username = request.args.get("name",default="anonymous")
+  subject = request.args.get("subject",default="get Admission")
   # static file  => dynamically generate the url
-  print(url_for("static",filename="static.css"))
-  return render_template("index.html")
+  #print(url_for("static",filename="static.css"))
+  return render_template("index.html",name = username,sub=subject)
 
 @app.route("/login",methods = ["GET","POST"])
 def prime():
