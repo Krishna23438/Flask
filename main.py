@@ -1,15 +1,23 @@
-from flask import Flask,  render_template ,url_for, request
+from flask import Flask,  render_template ,url_for, request,jsonify
 
 app = Flask(__name__)
 
 # URL => endpoint /
+#@app.route("/")
+# def hello_world():
+#   username = request.args.get("name",default="anonymous")
+#   subject = request.args.get("subject",default="get Admission")
+#   # static file  => dynamically generate the url
+#   #print(url_for("static",filename="static.css"))
+#   return render_template("index.html",name = username,sub=subject)
+
 @app.route("/")
 def hello_world():
-  username = request.args.get("name",default="anonymous")
-  subject = request.args.get("subject",default="get Admission")
-  # static file  => dynamically generate the url
-  #print(url_for("static",filename="static.css"))
-  return render_template("index.html",name = username,sub=subject)
+   data = {
+      "message":"Welcome to the platform"
+   }
+
+   return jsonify(data),501
 
 @app.route("/login",methods = ["GET","POST"])
 def prime():
