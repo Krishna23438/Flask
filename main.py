@@ -1,4 +1,4 @@
-from flask import Flask,  render_template, url_for
+from flask import Flask,  render_template ,url_for, request
 
 app = Flask(__name__)
 
@@ -9,12 +9,20 @@ def hello_world():
   print(url_for("static",filename="static.css"))
   return render_template("index.html")
 
-@app.route("/login")
+@app.route("/login",methods = ["GET","POST"])
 def prime():
-  return render_template("login.html")
+  if request.method == "POST":
+      print(request.form) #ImmutableMultiDict([('username', 'Krishna Gupta'), ('password', '123')])
+      name = request.form["username"]
+      password = request.form["password"]
+  
+      return f"<h1>Welcome {name}! </h1>"
+  else:
+    return render_template("login.html")
 
-@app.route("/handle-login",methods = ["GET","POST"])
-def handle_login():
+
+
+
   return "<p> this route is to handle login</p>"
 
 
