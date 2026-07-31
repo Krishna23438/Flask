@@ -25,9 +25,10 @@ def login():
       #print(request.form) #ImmutableMultiDict([('username', 'Krishna Gupta'), ('password', '123')])
       name = request.form["username"]
       password = request.form["password"]
-  
+
+      freinds = ["Bob", "Adam", "Charlie","Sam"]
       # send it to database & verify 
-      return render_template("welcome.html",name = name, password = password)
+      return render_template("welcome.html",name = name, password = password, freinds = freinds)
       
   else:
     return render_template("login.html")

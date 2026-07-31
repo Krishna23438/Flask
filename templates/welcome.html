@@ -6,7 +6,7 @@
   <title>Welcome Page</title>
 </head>
 <body>
-  <h1>Welcome back {{ name }}</h1>
+  <h1>Welcome back {{ name }}!</h1>
 
   {% if name %}
     <h1>Hello {{name}}</h1>
@@ -14,5 +14,10 @@
     <h1>Hello, World</h1>
   {% endif %}
   
+  <ol>
+    {% for freind in freinds %}
+      <li>{{ freind }}</li>
+    {% endfor %}
+  </ol>
 </body>
 </html>
