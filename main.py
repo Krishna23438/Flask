@@ -27,14 +27,12 @@ def login():
       password = request.form["password"]
 
       freinds = ["Bob", "Adam", "Charlie","Sam"]
-      # send it to database & verify 
-      return render_template("welcome.html",name = name, password = password, freinds = freinds)
+
+      header = "<header>ABC Website</header>"
+      return render_template("welcome.html",name = name, password = password, freinds = freinds, header = header)
       
   else:
     return render_template("login.html")
-
-
-
 
   #return "<p> this route is to handle login</p>"
 

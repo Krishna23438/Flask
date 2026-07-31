@@ -6,6 +6,7 @@
   <title>Welcome Page</title>
 </head>
 <body>
+  {{ header | safe }}
   <h1>Welcome back {{ name }}!</h1>
 
   {% if name %}
@@ -19,5 +20,6 @@
       <li>{{ freind }}</li>
     {% endfor %}
   </ol>
+
 </body>
 </html>
