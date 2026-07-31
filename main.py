@@ -20,20 +20,22 @@ def hello_world():
    return jsonify(data),501
 
 @app.route("/login",methods = ["GET","POST"])
-def prime():
+def login():
   if request.method == "POST":
-      print(request.form) #ImmutableMultiDict([('username', 'Krishna Gupta'), ('password', '123')])
+      #print(request.form) #ImmutableMultiDict([('username', 'Krishna Gupta'), ('password', '123')])
       name = request.form["username"]
       password = request.form["password"]
   
-      return f"<h1>Welcome {name}! </h1>"
+      # send it to database & verify 
+      return render_template("welcome.html",name = name, password = password)
+      
   else:
     return render_template("login.html")
 
 
 
 
-  return "<p> this route is to handle login</p>"
+  #return "<p> this route is to handle login</p>"
 
 
 if __name__ == "__main__":
