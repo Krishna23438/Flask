@@ -21,7 +21,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-  return render_template("index.hmtl")
+  return render_template("index.html")
 # @app.route("/login",methods = ["GET","POST"])
 # def login():
 #   if request.method == "POST":
