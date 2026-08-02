@@ -1,6 +1,8 @@
-from flask import Flask,  render_template ,url_for, request,jsonify
+from flask import Flask,  render_template ,url_for, request,jsonify, flash
 
 app = Flask(__name__)
+
+app.secret_key = "some secret message or key" # to flash message like notification , error
 
 # URL => endpoint /
 #@app.route("/")
@@ -41,6 +43,7 @@ def hello_world():
 
 @app.route("/contact")
 def contact():
+  flash("supprt timing are from 9-5")
   return render_template("contact.html")
 
 if __name__ == "__main__":

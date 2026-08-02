@@ -8,6 +8,17 @@
     <h1>Contact page</h1>
     <p class="important">Welcome to the contact.html page</p>
 
+
+    {% with messages  = get_flashed_messages()%}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li> {{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    
 {% endblock %}
 
 {% block footer %}
