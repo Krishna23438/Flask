@@ -23,7 +23,7 @@ app = Flask(__name__)
 def hello_world():
   return render_template("index.html")
 # @app.route("/login",methods = ["GET","POST"])
-# def login():
+# def login(): 
 #   if request.method == "POST":
 #       #print(request.form) #ImmutableMultiDict([('username', 'Krishna Gupta'), ('password', '123')])
 #       name = request.form["username"]

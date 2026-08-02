@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello page</title>
-  <link rel="stylesheet" href="{{url_for('static',filename='static.css')}}">
-</head>
-<body>
-    <!-- <q>Your name is : {{name}} and subject is {{sub}}</q>
-    <h1>Hello from ApnaCollege!</h1>
-    <footer><i>Rndered from index.html</i></footer> -->
-    <h1>Hello from Krishna Gupta</h1>
-</body>
-</html>
+{% extends "layout.html" %}
+
+<!-- customization -->
+
+{% block title%}Main Page{% endblock %}
+
+{% block content %}
+    <h1>Main page</h1>
+    <p class="important">Welcome to the Index.html page</p>
+{% endblock %}
