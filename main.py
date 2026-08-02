@@ -1,4 +1,4 @@
-from flask import Flask,  render_template ,url_for, request,jsonify, flash
+from flask import Flask,  render_template ,url_for, request,jsonify, flash, redirect
 
 app = Flask(__name__)
 
@@ -23,7 +23,7 @@ app.secret_key = "some secret message or key" # to flash message like notificati
 
 @app.route("/")
 def hello_world():
-  return render_template("index.html")
+  return redirect(url_for("login"))
 # @app.route("/login",methods = ["GET","POST"])
 # def login(): 
 #   if request.method == "POST":
@@ -45,6 +45,11 @@ def hello_world():
 def contact():
   flash("supprt timing are from 9-5")
   return render_template("contact.html")
+
+@app.route("/login")
+def login():
+  return "<p>Login Page<p>"
+
 
 if __name__ == "__main__":
   app.run(debug=True)
